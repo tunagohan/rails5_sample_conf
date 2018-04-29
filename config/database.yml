@@ -1,0 +1,25 @@
+# MySQL. Versions 5.1.10 and up are supported.
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  socket: /tmp/mysql.sock
+  host: localhost
+
+development:
+  <<: *default
+  database: dream_tweet_development
+  username: <%= ENV['MYSQL_ROOT_USER'] %>
+  password: <%= ENV['MYSQL_ROOT_PASS'] %>
+
+test:
+  <<: *default
+  database: dream_tweet_test
+  username: <%= ENV['MYSQL_ROOT_USER'] %>
+  password: <%= ENV['MYSQL_ROOT_PASS'] %>
+
+production:
+  <<: *default
+  database: dream_tweet_production
+  username: <%= ENV['MYSQL_ROOT_USER'] %>
+  password: <%= ENV['MYSQL_ROOT_PASS'] %>
