@@ -1,0 +1,2 @@
+# rails5_sample_conf
+Rails5で初期設定するの省くため
